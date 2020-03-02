@@ -66,8 +66,10 @@
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
-<img src="./readmeResources/interactivePrototype.gif" width=250>
+
+
 ### [BONUS] Interactive Prototype
+<img src="./readmeResources/interactivePrototype.gif" width=250>
 
 ## Schema 
 [This section will be completed in Unit 9]
