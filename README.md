@@ -1,6 +1,6 @@
 # Rise of Resistance
 
-# README Example: https://hackmd.io/MTD5HxGBRtSdcEJ08kT63w?both
+# (Please remove this line when finished) README Example: https://hackmd.io/MTD5HxGBRtSdcEJ08kT63w?both
 
 ## Table of Contents
 
@@ -74,13 +74,13 @@
 ### [BONUS] Digital Wireframes & Mockups
 
 <p float="left">
-   <img src="./readmeResources/img1.PNG" width=200>
-   <img src="./readmeResources/img2.PNG" width=200>
-   <img src="./readmeResources/img3.PNG" width=200>
-   <img src="./readmeResources/img4.PNG" width=200>
-   <img src="./readmeResources/img5.PNG" width=200>
-   <img src="./readmeResources/img6.PNG" width=200>
-   <img src="./readmeResources/img7.PNG" width=200>
+   <img src="./readmeResources/img1.PNG" width=100>
+   <img src="./readmeResources/img2.PNG" width=100>
+   <img src="./readmeResources/img3.PNG" width=100>
+   <img src="./readmeResources/img4.PNG" width=100>
+   <img src="./readmeResources/img5.PNG" width=100>
+   <img src="./readmeResources/img6.PNG" width=100>
+   <img src="./readmeResources/img7.PNG" width=100>
 </p>
 
 ### [BONUS] Interactive Prototype
