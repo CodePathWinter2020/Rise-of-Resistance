@@ -1,7 +1,6 @@
-Group Project - README Template
-===
+# Rise of Resistance
 
-# APP_NAME_HERE
+# README Example: https://hackmd.io/MTD5HxGBRtSdcEJ08kT63w?both
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -67,7 +66,7 @@ Group Project - README Template
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
-
+<img src="./readmeResources/interactivePrototype.gif" width=250>
 ### [BONUS] Interactive Prototype
 
 ## Schema 
