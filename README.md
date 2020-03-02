@@ -66,7 +66,13 @@
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
-
+<img src="./readmeResources/img1.PNG" width=250>
+<img src="./readmeResources/img2.PNG" width=250>
+<img src="./readmeResources/img3.PNG" width=250>
+<img src="./readmeResources/img4.PNG" width=250>
+<img src="./readmeResources/img5.PNG" width=250>
+<img src="./readmeResources/img6.PNG" width=250>
+<img src="./readmeResources/img7.PNG" width=250>
 
 ### [BONUS] Interactive Prototype
 <img src="./readmeResources/interactivePrototype.gif" width=250>
