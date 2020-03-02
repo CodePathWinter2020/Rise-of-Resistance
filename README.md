@@ -74,13 +74,13 @@
 ### [BONUS] Digital Wireframes & Mockups
 
 <p float="left">
-   <img src="./readmeResources/img1.PNG" width=250>
-   <img src="./readmeResources/img2.PNG" width=250>
-   <img src="./readmeResources/img3.PNG" width=250>
-   <img src="./readmeResources/img4.PNG" width=250>
-   <img src="./readmeResources/img5.PNG" width=250>
-   <img src="./readmeResources/img6.PNG" width=250>
-   <img src="./readmeResources/img7.PNG" width=250>
+   <img src="./readmeResources/img1.PNG" width=200>
+   <img src="./readmeResources/img2.PNG" width=200>
+   <img src="./readmeResources/img3.PNG" width=200>
+   <img src="./readmeResources/img4.PNG" width=200>
+   <img src="./readmeResources/img5.PNG" width=200>
+   <img src="./readmeResources/img6.PNG" width=200>
+   <img src="./readmeResources/img7.PNG" width=200>
 </p>
 
 ### [BONUS] Interactive Prototype
