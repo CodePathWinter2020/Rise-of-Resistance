@@ -13,18 +13,18 @@
 
 ### Description
 
-[Description of your app]
+Rise of Resistance is an iOS game that is based on a classic battleship shooting game. It is fun game with aim to rack up the highest points possible. It also has multiple version where you could play as a regular battleship, or a secondary version which also the player to play as a UCI mascot and take down other institutions.
 
 ### App Evaluation
 
 [Evaluation of your app across the following attributes]
 
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Gamming/Games
+- **Mobile:** This is a mobile game and would be available on mobile devices to be played.
+- **Story:** Destroy all of the resistance and gain the highest best score, by shooting down enemies and dodging fire.
+- **Market:** An individual would use this application to destress and have fun. It can be downloaded and played by people of all age groups.
+- **Habit:** This app could be used as often or unoften as the user want. It depends on how bored the user is and how often they use thier phone for gaming.
+- **Scope:** We start of with being able to just shoot down enimies, but later we could evolve into having different powerups and different skins for your own spaceship. 
 
 ## Product Spec
 
