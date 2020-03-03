@@ -75,18 +75,26 @@ Rise of Resistance is an iOS game that is based on a classic battleship shooting
 
 **Tab Navigation** (Tab to Screen)
 
-- [fill out your first tab]
-- [fill out your second tab]
-- [fill out your third tab]
+- Pause a game
+- Unpause a game
 
 **Flow Navigation** (Screen to Screen)
 
-- [list first screen here]
-  - [list screen navigation here]
-  - ...
-- [list second screen here]
-  - [list screen navigation here]
-  - ...
+- Main Menu
+	=> Version 1
+	=> Version 2
+- Game Version
+	=> Pause
+	=> Game Over
+- Game Version 2
+	=> Pause
+	=> Game Over
+- Paused
+	=> Main Menu
+	=> Game Version 1 or Version 2 (Unpause)
+- Game Over
+	=> Game Version 1 or Version 2 (Restart)
+	=> Main Menu
 
 ## Wireframes
 
