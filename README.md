@@ -1,7 +1,5 @@
 # Rise of Resistance
 
-# (Please remove this line when finished) README Example: https://hackmd.io/MTD5HxGBRtSdcEJ08kT63w?both
-
 ## Table of Contents
 
 1. [Overview](#Overview)
@@ -104,13 +102,13 @@ Rise of Resistance is an iOS game that is based on a classic battleship shooting
 ### [BONUS] Digital Wireframes & Mockups
 
 <p float="left">
-   <img src="./readmeResources/img1.PNG" width=100>
-   <img src="./readmeResources/img2.PNG" width=100>
-   <img src="./readmeResources/img3.PNG" width=100>
-   <img src="./readmeResources/img4.PNG" width=100>
-   <img src="./readmeResources/img5.PNG" width=100>
-   <img src="./readmeResources/img6.PNG" width=100>
-   <img src="./readmeResources/img7.PNG" width=100>
+   <img src="./readmeResources/img1.png" width=100>
+   <img src="./readmeResources/img2.png" width=100>
+   <img src="./readmeResources/img3.png" width=100>
+   <img src="./readmeResources/img4.png" width=100>
+   <img src="./readmeResources/img5.png" width=100>
+   <img src="./readmeResources/img6.png" width=100>
+   <img src="./readmeResources/img7.png" width=100>
 </p>
 
 ### [BONUS] Interactive Prototype
