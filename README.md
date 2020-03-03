@@ -30,13 +30,22 @@ Rise of Resistance is an iOS game that is based on a classic battleship shooting
 
 **Required Must-have Stories**
 
-- [fill in your required user stories here]
-- ...
+- User can choose the game mode on the home screen (Version 1 or Version 2)
+- User can start a game
+- User can shoot down enemy ships
+- User can move from side to side to dodge fire
+- User can gain points
+- User can lose the game
+- User can get a current score and best score
+- User can play again
+- User can go back to the main menu
+
 
 **Optional Nice-to-have Stories**
 
-- [fill in your required user stories here]
-- ...
+- User can play as UCI in Version 2 and shoot down other schools
+- User can choose between different skins
+- User can gain different powerups
 
 ### 2. Screen Archetypes
 
