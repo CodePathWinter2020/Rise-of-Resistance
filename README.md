@@ -17,8 +17,6 @@ Rise of Resistance is an iOS game that is based on a classic battleship shooting
 
 ### App Evaluation
 
-[Evaluation of your app across the following attributes]
-
 - **Category:** Gamming/Games
 - **Mobile:** This is a mobile game and would be available on mobile devices to be played.
 - **Story:** Destroy all of the resistance and gain the highest best score, by shooting down enemies and dodging fire.
