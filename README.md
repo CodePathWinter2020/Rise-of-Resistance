@@ -39,7 +39,7 @@ Rise of Resistance is an iOS game that is based on a classic battleship shooting
 - User can get a current score and best score
 - User can play again
 - User can go back to the main menu
-
+- User can pause the game
 
 **Optional Nice-to-have Stories**
 
@@ -49,12 +49,27 @@ Rise of Resistance is an iOS game that is based on a classic battleship shooting
 
 ### 2. Screen Archetypes
 
-- [list first screen here]
-  - [list associated required story here]
-  - ...
-- [list second screen here]
-  - [list associated required story here]
-  - ...
+- Main Menu
+  - User can choose the game mode
+  - User can start a game
+- Game Version 1
+  - User can shoot down enemy ships
+  - User can move from side to side to dodge fire
+  - User can gain points
+  - User can lose the game
+  - User can pause the game
+- Game Version 2
+  - User can shoot down enemy schools
+  - User can move from side to side to dodge fire
+  - User can gain points
+  - User can lose the game
+  - User can pause the game
+- Paused
+  - User can go back to the main menu
+- Game Over
+  - User can get a current score and best score
+  - User can play again
+  - User can go back to the main menu
 
 ### 3. Navigation
 
