@@ -47,7 +47,7 @@ class MenuScene: SKScene {
             }
             else if nodesArray.first?.name == "changeMapBtn" {
                 if mapLabel.text == "Map: Original" {
-                    mapLabel.text = "Map: Zot"
+                    mapLabel.text = "Map: Zot (Hard)"
                 }
                 else {
                     mapLabel.text = "Map: Original"

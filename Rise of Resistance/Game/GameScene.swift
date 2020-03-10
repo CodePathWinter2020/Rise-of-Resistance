@@ -136,7 +136,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         torpedoNode.physicsBody?.usesPreciseCollisionDetection = true
         self.addChild(torpedoNode)
         
-        let animationDuration : TimeInterval = 0.1
+        let animationDuration : TimeInterval = 1
         var actionArray = [SKAction]()
         actionArray.append(SKAction.move(to: CGPoint(x: playerShip.position.x, y: self.frame.size.height), duration: animationDuration))
         actionArray.append(SKAction.removeFromParent())

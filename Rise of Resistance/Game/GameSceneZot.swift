@@ -49,7 +49,7 @@ class GameSceneZot: SKScene, SKPhysicsContactDelegate {
         playerShip.name = "shuttle"
         playerShip.position = CGPoint(x: self.frame.size.width / 2, y: playerShip.size.height / 2 + 20)
         self.addChild(playerShip)
-        playerShip.physicsBody = SKPhysicsBody(rectangleOf: playerShip.size)
+        playerShip.physicsBody = SKPhysicsBody(circleOfRadius: playerShip.size.width / 2)
         playerShip.physicsBody?.isDynamic = false
         playerShip.physicsBody?.categoryBitMask = playerShipCategory
         playerShip.physicsBody?.contactTestBitMask = alienCategory
@@ -65,7 +65,7 @@ class GameSceneZot: SKScene, SKPhysicsContactDelegate {
         self.addChild(scoreLabel)
         
         // add aliens every 0.3 seconds
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(addAliens), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(addAliens), userInfo: nil, repeats: true)
     
     }
     
@@ -84,7 +84,7 @@ class GameSceneZot: SKScene, SKPhysicsContactDelegate {
         alien.physicsBody?.collisionBitMask = 0
         self.addChild(alien)
         
-        let animationDuration : TimeInterval = 6
+        let animationDuration : TimeInterval = 3
         var actionArray = [SKAction]()
         // y: -alien.size.height => leaves the screen at the bottom of iphone
         actionArray.append(SKAction.move(to: CGPoint(x: position, y: -alien.size.height), duration: animationDuration))
@@ -137,7 +137,7 @@ class GameSceneZot: SKScene, SKPhysicsContactDelegate {
         torpedoNode.physicsBody?.usesPreciseCollisionDetection = true
         self.addChild(torpedoNode)
         
-        let animationDuration : TimeInterval = 0.1
+        let animationDuration : TimeInterval = 1
         var actionArray = [SKAction]()
         actionArray.append(SKAction.move(to: CGPoint(x: playerShip.position.x, y: self.frame.size.height), duration: animationDuration))
         actionArray.append(SKAction.removeFromParent())
