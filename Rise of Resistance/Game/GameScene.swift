@@ -20,6 +20,9 @@ class GameScene: SKScene {
             scoreLabel.text = "Score: \(score)"
         }
     }
+    var alienCategory : UInt32 = 0x1 << 1
+    var photoTorpedoCategory : UInt32 = 0x1 << 0
+    var gameTimer : Timer!
     
     override func didMove(to view: SKView) {
         
@@ -47,7 +50,36 @@ class GameScene: SKScene {
         score = 0
         self.addChild(scoreLabel)
         
+        // add aliens every 0.3 seconds
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(addAliens), userInfo: nil, repeats: true)
+        
     }
+    
+    
+    @objc func addAliens() {
+        
+        let alien = SKSpriteNode(imageNamed: "alien")
+        let randomAlienPosition = GKRandomDistribution(lowestValue: 0, highestValue: Int(self.frame.size.width))
+        let position = CGFloat(randomAlienPosition.nextInt())
+        alien.position = CGPoint(x: position, y: self.frame.size.height + alien.size.height)
+        alien.physicsBody = SKPhysicsBody(rectangleOf: alien.size)
+        alien.physicsBody?.isDynamic = true
+        alien.physicsBody?.categoryBitMask = alienCategory
+        alien.physicsBody?.contactTestBitMask = photoTorpedoCategory
+        alien.physicsBody?.collisionBitMask = 0
+        
+        self.addChild(alien)
+        
+        let animationDuration : TimeInterval = 6
+        var actionArray = [SKAction]()
+        // y: -alien.size.height => leaves the screen at the bottom of iphone
+        actionArray.append(SKAction.move(to: CGPoint(x: position, y: -alien.size.height), duration: animationDuration))
+        actionArray.append(SKAction.removeFromParent())
+        alien.run(SKAction.sequence(actionArray))
+        
+    }
+    
+    
 //
 //
 //    func touchDown(atPoint pos : CGPoint) {
