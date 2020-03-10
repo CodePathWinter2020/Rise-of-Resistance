@@ -16,6 +16,8 @@
 		243EFB16241714BD00997849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243EFB15241714BD00997849 /* Assets.xcassets */; };
 		243EFB19241714BD00997849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243EFB17241714BD00997849 /* LaunchScreen.storyboard */; };
 		246A7C2D24171FCD00415E01 /* SpaceBackground.sks in Resources */ = {isa = PBXBuildFile; fileRef = 246A7C2B24171FCD00415E01 /* SpaceBackground.sks */; };
+		246A7C302417237000415E01 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 246A7C2F2417237000415E01 /* MenuScene.sks */; };
+		246A7C32241723B800415E01 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246A7C31241723B800415E01 /* MenuScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		243EFB18241714BD00997849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		243EFB1A241714BD00997849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		246A7C2B24171FCD00415E01 /* SpaceBackground.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceBackground.sks; sourceTree = "<group>"; };
+		246A7C2F2417237000415E01 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
+		246A7C31241723B800415E01 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +67,10 @@
 			isa = PBXGroup;
 			children = (
 				243EFB08241714BC00997849 /* AppDelegate.swift */,
-				243EFB0A241714BC00997849 /* GameScene.sks */,
+				246A7C34241723C300415E01 /* Game */,
+				246A7C33241723BC00415E01 /* Menu */,
 				246A7C2B24171FCD00415E01 /* SpaceBackground.sks */,
 				243EFB0C241714BC00997849 /* Actions.sks */,
-				243EFB0E241714BC00997849 /* GameScene.swift */,
 				243EFB10241714BC00997849 /* GameViewController.swift */,
 				243EFB12241714BC00997849 /* Main.storyboard */,
 				243EFB15241714BD00997849 /* Assets.xcassets */,
@@ -74,6 +78,24 @@
 				243EFB1A241714BD00997849 /* Info.plist */,
 			);
 			path = "Rise of Resistance";
+			sourceTree = "<group>";
+		};
+		246A7C33241723BC00415E01 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				246A7C2F2417237000415E01 /* MenuScene.sks */,
+				246A7C31241723B800415E01 /* MenuScene.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		246A7C34241723C300415E01 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				243EFB0A241714BC00997849 /* GameScene.sks */,
+				243EFB0E241714BC00997849 /* GameScene.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +162,7 @@
 				243EFB19241714BD00997849 /* LaunchScreen.storyboard in Resources */,
 				246A7C2D24171FCD00415E01 /* SpaceBackground.sks in Resources */,
 				243EFB0D241714BC00997849 /* Actions.sks in Resources */,
+				246A7C302417237000415E01 /* MenuScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				243EFB0F241714BC00997849 /* GameScene.swift in Sources */,
+				246A7C32241723B800415E01 /* MenuScene.swift in Sources */,
 				243EFB11241714BC00997849 /* GameViewController.swift in Sources */,
 				243EFB09241714BC00997849 /* AppDelegate.swift in Sources */,
 			);
@@ -306,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Rise-of-Resistance";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -324,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Rise-of-Resistance";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
