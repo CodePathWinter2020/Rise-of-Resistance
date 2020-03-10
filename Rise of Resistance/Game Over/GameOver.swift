@@ -19,7 +19,7 @@ class GameOver: SKScene {
         self.backgroundColor = SKColor.black
         
         let spaceBackground = SKEmitterNode(fileNamed: "SpaceBackground.sks")
-        spaceBackground?.position = CGPoint(x: self.frame.width / 2, y: self.frame.size.height)
+        spaceBackground?.position = CGPoint(x: 0, y: self.frame.size.height)
         spaceBackground?.zPosition = -20
         spaceBackground?.advanceSimulationTime(Double(spaceBackground!.particleLifetime))
         self.addChild(spaceBackground!)
