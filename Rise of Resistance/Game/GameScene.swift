@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
 
     var playerShip : SKSpriteNode!
     var scoreLabel : SKLabelNode!
@@ -21,8 +21,12 @@ class GameScene: SKScene {
         }
     }
     var alienCategory : UInt32 = 0x1 << 1
-    var photoTorpedoCategory : UInt32 = 0x1 << 0
+    var photonTorpedoCategory : UInt32 = 0x1 << 0
     var gameTimer : Timer!
+    var shooting = false
+    var lastShootingTime : TimeInterval = 0
+    var delayBetweenShots : TimeInterval = 0.1
+    var firstCorrectTouch = false
     
     override func didMove(to view: SKView) {
         
@@ -53,6 +57,9 @@ class GameScene: SKScene {
         // add aliens every 0.3 seconds
         gameTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(addAliens), userInfo: nil, repeats: true)
         
+        // add SKPhysicsContactDelegate <- Very important, needed for didBegin and torpedoDidCollideWithAlien
+        // used for detect bullets hitting the enemy ships
+        self.physicsWorld.contactDelegate = self
     }
     
     
@@ -65,7 +72,7 @@ class GameScene: SKScene {
         alien.physicsBody = SKPhysicsBody(rectangleOf: alien.size)
         alien.physicsBody?.isDynamic = true
         alien.physicsBody?.categoryBitMask = alienCategory
-        alien.physicsBody?.contactTestBitMask = photoTorpedoCategory
+        alien.physicsBody?.contactTestBitMask = photonTorpedoCategory
         alien.physicsBody?.collisionBitMask = 0
         self.addChild(alien)
         
@@ -78,6 +85,37 @@ class GameScene: SKScene {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let location = (touch?.location(in: self))!
+        
+        for touchedNode in self.nodes(at: location) {
+            if touchedNode.name == "shuttle" {
+                self.shooting = true
+            }
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let location = touch.location(in: self)
+
+        for touchedNode in self.nodes(at: location) {
+            if touchedNode.name == "shuttle" {
+                firstCorrectTouch = true
+            }
+            
+            if firstCorrectTouch {
+                playerShip.position.x = location.x
+                playerShip.position.y = location.y
+            }
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.shooting = false
+    }
+    
     func fireTopedo() {
         self.run(SKAction.playSoundFileNamed("torpedo.mp3", waitForCompletion: false))
         let torpedoNode = SKSpriteNode(imageNamed: "torpedo")
@@ -86,7 +124,7 @@ class GameScene: SKScene {
         let radius = torpedoNode.size.width / 2
         torpedoNode.physicsBody = SKPhysicsBody(circleOfRadius: radius)
         torpedoNode.physicsBody?.isDynamic = true
-        torpedoNode.physicsBody?.categoryBitMask = photoTorpedoCategory
+        torpedoNode.physicsBody?.categoryBitMask = photonTorpedoCategory
         torpedoNode.physicsBody?.contactTestBitMask = alienCategory
         torpedoNode.physicsBody?.collisionBitMask = 0
         torpedoNode.physicsBody?.usesPreciseCollisionDetection = true
@@ -99,56 +137,52 @@ class GameScene: SKScene {
         torpedoNode.run(SKAction.sequence(actionArray))
     }
     
+    // delegate method from SKPhysicsContactDelegate
+    func didBegin(_ contact: SKPhysicsContact) {
+        print("hello???\n");
+        // find out which body is alien or torpedo
+        var firstBody : SKPhysicsBody
+        var secondBody : SKPhysicsBody
+        
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        if (firstBody.categoryBitMask & photonTorpedoCategory) != 0 && secondBody.categoryBitMask & alienCategory != 0 {
+            torpedoDidCollideWithAlien(torpedoNode: firstBody.node as! SKSpriteNode, alienNode: secondBody.node as! SKSpriteNode)
+        }
+    }
     
-//
-//
-//    func touchDown(atPoint pos : CGPoint) {
-//        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-//            n.position = pos
-//            n.strokeColor = SKColor.green
-//            self.addChild(n)
-//        }
-//    }
-//
-//    func touchMoved(toPoint pos : CGPoint) {
-//        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-//            n.position = pos
-//            n.strokeColor = SKColor.blue
-//            self.addChild(n)
-//        }
-//    }
-//
-//    func touchUp(atPoint pos : CGPoint) {
-//        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-//            n.position = pos
-//            n.strokeColor = SKColor.red
-//            self.addChild(n)
-//        }
-//    }
-//
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        if let label = self.label {
-//            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-//        }
-//
-//        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-//    }
-//
-//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-//    }
-//
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-//    }
-//
-//    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-//    }
-    
+    func torpedoDidCollideWithAlien(torpedoNode: SKSpriteNode, alienNode: SKSpriteNode) {
+        let explosion = SKEmitterNode(fileNamed: "Explosion")!
+        explosion.position = alienNode.position
+        self.addChild(explosion)
+        
+        self.run(SKAction.playSoundFileNamed("explosion.mp3", waitForCompletion: false))
+        
+        torpedoNode.removeFromParent()
+        alienNode.removeFromParent()
+        
+        self.run(SKAction.wait(forDuration: 2)) {
+            explosion.removeFromParent()
+        }
+        
+        score += 5
+    }
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+        if shooting {
+            let delay = currentTime - lastShootingTime
+            if delay >= delayBetweenShots {
+                fireTopedo()
+                lastShootingTime = currentTime
+            }
+        }
     }
+
 }
 

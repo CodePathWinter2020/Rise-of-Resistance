@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240E30D7241751D9007247E0 /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 240E30D6241751D9007247E0 /* explosion.mp3 */; };
 		243EFB09241714BC00997849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243EFB08241714BC00997849 /* AppDelegate.swift */; };
 		243EFB0B241714BC00997849 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 243EFB0A241714BC00997849 /* GameScene.sks */; };
 		243EFB0D241714BC00997849 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 243EFB0C241714BC00997849 /* Actions.sks */; };
@@ -15,6 +16,7 @@
 		243EFB14241714BC00997849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243EFB12241714BC00997849 /* Main.storyboard */; };
 		243EFB16241714BD00997849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243EFB15241714BD00997849 /* Assets.xcassets */; };
 		243EFB19241714BD00997849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243EFB17241714BD00997849 /* LaunchScreen.storyboard */; };
+		244684CB2417562A00D6B0FD /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 244684CA2417562A00D6B0FD /* Explosion.sks */; };
 		246A7C2D24171FCD00415E01 /* SpaceBackground.sks in Resources */ = {isa = PBXBuildFile; fileRef = 246A7C2B24171FCD00415E01 /* SpaceBackground.sks */; };
 		246A7C302417237000415E01 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 246A7C2F2417237000415E01 /* MenuScene.sks */; };
 		246A7C32241723B800415E01 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246A7C31241723B800415E01 /* MenuScene.swift */; };
@@ -22,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		240E30D6241751D9007247E0 /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
 		243EFB05241714BC00997849 /* Rise of Resistance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rise of Resistance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		243EFB08241714BC00997849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		243EFB0A241714BC00997849 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		243EFB15241714BD00997849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		243EFB18241714BD00997849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		243EFB1A241714BD00997849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		244684CA2417562A00D6B0FD /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Explosion.sks; path = "../../../SpriteKit-Space-Game-Tutorial-master/SpacegameReloaded/Emmitters/Explosion.sks"; sourceTree = "<group>"; };
 		246A7C2B24171FCD00415E01 /* SpaceBackground.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceBackground.sks; sourceTree = "<group>"; };
 		246A7C2F2417237000415E01 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		246A7C31241723B800415E01 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240E30D8241751DD007247E0 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				246A7C35241735F800415E01 /* torpedo.mp3 */,
+				240E30D6241751D9007247E0 /* explosion.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		243EFAFC241714BC00997849 = {
 			isa = PBXGroup;
 			children = (
@@ -71,9 +84,9 @@
 				243EFB08241714BC00997849 /* AppDelegate.swift */,
 				246A7C34241723C300415E01 /* Game */,
 				246A7C33241723BC00415E01 /* Menu */,
-				246A7C2B24171FCD00415E01 /* SpaceBackground.sks */,
+				244684C9241755B300D6B0FD /* Emitters */,
 				243EFB0C241714BC00997849 /* Actions.sks */,
-				246A7C35241735F800415E01 /* torpedo.mp3 */,
+				240E30D8241751DD007247E0 /* Sounds */,
 				243EFB10241714BC00997849 /* GameViewController.swift */,
 				243EFB12241714BC00997849 /* Main.storyboard */,
 				243EFB15241714BD00997849 /* Assets.xcassets */,
@@ -81,6 +94,15 @@
 				243EFB1A241714BD00997849 /* Info.plist */,
 			);
 			path = "Rise of Resistance";
+			sourceTree = "<group>";
+		};
+		244684C9241755B300D6B0FD /* Emitters */ = {
+			isa = PBXGroup;
+			children = (
+				246A7C2B24171FCD00415E01 /* SpaceBackground.sks */,
+				244684CA2417562A00D6B0FD /* Explosion.sks */,
+			);
+			path = Emitters;
 			sourceTree = "<group>";
 		};
 		246A7C33241723BC00415E01 /* Menu */ = {
@@ -162,7 +184,9 @@
 				243EFB14241714BC00997849 /* Main.storyboard in Resources */,
 				243EFB0B241714BC00997849 /* GameScene.sks in Resources */,
 				243EFB16241714BD00997849 /* Assets.xcassets in Resources */,
+				240E30D7241751D9007247E0 /* explosion.mp3 in Resources */,
 				243EFB19241714BD00997849 /* LaunchScreen.storyboard in Resources */,
+				244684CB2417562A00D6B0FD /* Explosion.sks in Resources */,
 				246A7C2D24171FCD00415E01 /* SpaceBackground.sks in Resources */,
 				243EFB0D241714BC00997849 /* Actions.sks in Resources */,
 				246A7C36241735F800415E01 /* torpedo.mp3 in Resources */,
