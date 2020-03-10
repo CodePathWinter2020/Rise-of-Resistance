@@ -11,15 +11,41 @@ import GameplayKit
 
 class GameScene: SKScene {
 
+    var playerShip : SKSpriteNode!
+    var scoreLabel : SKLabelNode!
+    var score : Int = 0 {
+        // didSet updates scoreLabel when score is changed
+        // aka lazy load
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
     
     override func didMove(to view: SKView) {
+        
+        // add space background
        self.backgroundColor = SKColor.black
-//
         let spaceBackground = SKEmitterNode(fileNamed: "SpaceBackground.sks")
         spaceBackground?.position = CGPoint(x: self.frame.width / 2, y: self.frame.size.height)
         spaceBackground?.zPosition = -20
     spaceBackground?.advanceSimulationTime(Double(spaceBackground!.particleLifetime))
         self.addChild(spaceBackground!)
+        
+        // add playerShip
+        playerShip = SKSpriteNode(imageNamed: "shuttle")
+        playerShip.name = "shuttle"
+        playerShip.position = CGPoint(x: self.frame.size.width / 2, y: playerShip.size.height / 2 + 20)
+        self.addChild(playerShip)
+        
+        
+        // add score label
+        scoreLabel = SKLabelNode(text: "Score: 0")
+        scoreLabel.position = CGPoint(x: 80, y: self.frame.height - 70)
+        scoreLabel.fontName = "AmericanTypewriter-Bold"
+        scoreLabel.fontSize = 28
+        scoreLabel.fontColor = UIColor(red: CGFloat(255.0/255.0), green: CGFloat(165.0/255.0), blue: CGFloat(165.0/255.0), alpha: 1.0)
+        score = 0
+        self.addChild(scoreLabel)
         
     }
 //
@@ -73,3 +99,4 @@ class GameScene: SKScene {
         // Called before each frame is rendered
     }
 }
+
