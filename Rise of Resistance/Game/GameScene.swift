@@ -64,7 +64,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(scoreLabel)
         
         // add aliens every 0.3 seconds
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(addAliens), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.5 , target: self, selector: #selector(addAliens), userInfo: nil, repeats: true)
     
     }
     
