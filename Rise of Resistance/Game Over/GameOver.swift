@@ -1,5 +1,5 @@
 //
-//  MenuScene.swift
+//  GameOver.swift
 //  Rise of Resistance
 //
 //  Created by Hung Phan on 3/9/20.
@@ -8,26 +8,20 @@
 
 import SpriteKit
 
-class MenuScene: SKScene {
-    
-    var mapLabel : SKLabelNode!
-    
+class GameOver: SKScene {
     override func didMove(to view: SKView) {
         
         self.backgroundColor = SKColor.black
         
         let spaceBackground = SKEmitterNode(fileNamed: "SpaceBackground.sks")
-        spaceBackground?.position = CGPoint(x: 0, y: self.frame.size.height)
+        spaceBackground?.position = CGPoint(x: self.frame.width / 2, y: self.frame.size.height)
         spaceBackground?.zPosition = -20
         spaceBackground?.advanceSimulationTime(Double(spaceBackground!.particleLifetime))
         self.addChild(spaceBackground!)
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
-        
-        mapLabel = self.childNode(withName: "mapLabel") as! SKLabelNode
         
         if let location = touch?.location(in: self) {
             let nodesArray = self.nodes(at: location)
@@ -37,13 +31,10 @@ class MenuScene: SKScene {
                 let gameScene = GameScene(size: self.size)
                 self.view?.presentScene(gameScene, transition: transition)
             }
-            else if nodesArray.first?.name == "changeMapBtn" {
-                if mapLabel.text == "Map: Original" {
-                    mapLabel.text = "Map: Zot"
-                }
-                else {
-                    mapLabel.text = "Map: Original"
-                }
+            else if nodesArray.first?.name == "mainMenuBtn" {
+                let transition = SKTransition.flipVertical(withDuration: 0.5)
+                let menuScene = MenuScene(fileNamed: "MenuScene")
+                self.view?.presentScene(menuScene!, transition: transition)
             }
         }
     }

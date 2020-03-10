@@ -17,6 +17,8 @@
 		243EFB16241714BD00997849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243EFB15241714BD00997849 /* Assets.xcassets */; };
 		243EFB19241714BD00997849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243EFB17241714BD00997849 /* LaunchScreen.storyboard */; };
 		244684CB2417562A00D6B0FD /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 244684CA2417562A00D6B0FD /* Explosion.sks */; };
+		244684CD2417617300D6B0FD /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = 244684CC2417617300D6B0FD /* GameOver.sks */; };
+		244684CF2417617F00D6B0FD /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244684CE2417617F00D6B0FD /* GameOver.swift */; };
 		246A7C2D24171FCD00415E01 /* SpaceBackground.sks in Resources */ = {isa = PBXBuildFile; fileRef = 246A7C2B24171FCD00415E01 /* SpaceBackground.sks */; };
 		246A7C302417237000415E01 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 246A7C2F2417237000415E01 /* MenuScene.sks */; };
 		246A7C32241723B800415E01 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246A7C31241723B800415E01 /* MenuScene.swift */; };
@@ -36,6 +38,8 @@
 		243EFB18241714BD00997849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		243EFB1A241714BD00997849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		244684CA2417562A00D6B0FD /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Explosion.sks; path = "../../../SpriteKit-Space-Game-Tutorial-master/SpacegameReloaded/Emmitters/Explosion.sks"; sourceTree = "<group>"; };
+		244684CC2417617300D6B0FD /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
+		244684CE2417617F00D6B0FD /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		246A7C2B24171FCD00415E01 /* SpaceBackground.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceBackground.sks; sourceTree = "<group>"; };
 		246A7C2F2417237000415E01 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		246A7C31241723B800415E01 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
@@ -81,13 +85,14 @@
 		243EFB07241714BC00997849 /* Rise of Resistance */ = {
 			isa = PBXGroup;
 			children = (
-				243EFB08241714BC00997849 /* AppDelegate.swift */,
 				246A7C34241723C300415E01 /* Game */,
 				246A7C33241723BC00415E01 /* Menu */,
 				244684C9241755B300D6B0FD /* Emitters */,
-				243EFB0C241714BC00997849 /* Actions.sks */,
 				240E30D8241751DD007247E0 /* Sounds */,
+				244684D02417618A00D6B0FD /* Game Over */,
 				243EFB10241714BC00997849 /* GameViewController.swift */,
+				243EFB08241714BC00997849 /* AppDelegate.swift */,
+				243EFB0C241714BC00997849 /* Actions.sks */,
 				243EFB12241714BC00997849 /* Main.storyboard */,
 				243EFB15241714BD00997849 /* Assets.xcassets */,
 				243EFB17241714BD00997849 /* LaunchScreen.storyboard */,
@@ -103,6 +108,15 @@
 				244684CA2417562A00D6B0FD /* Explosion.sks */,
 			);
 			path = Emitters;
+			sourceTree = "<group>";
+		};
+		244684D02417618A00D6B0FD /* Game Over */ = {
+			isa = PBXGroup;
+			children = (
+				244684CC2417617300D6B0FD /* GameOver.sks */,
+				244684CE2417617F00D6B0FD /* GameOver.swift */,
+			);
+			path = "Game Over";
 			sourceTree = "<group>";
 		};
 		246A7C33241723BC00415E01 /* Menu */ = {
@@ -190,6 +204,7 @@
 				246A7C2D24171FCD00415E01 /* SpaceBackground.sks in Resources */,
 				243EFB0D241714BC00997849 /* Actions.sks in Resources */,
 				246A7C36241735F800415E01 /* torpedo.mp3 in Resources */,
+				244684CD2417617300D6B0FD /* GameOver.sks in Resources */,
 				246A7C302417237000415E01 /* MenuScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +219,7 @@
 				243EFB0F241714BC00997849 /* GameScene.swift in Sources */,
 				246A7C32241723B800415E01 /* MenuScene.swift in Sources */,
 				243EFB11241714BC00997849 /* GameViewController.swift in Sources */,
+				244684CF2417617F00D6B0FD /* GameOver.swift in Sources */,
 				243EFB09241714BC00997849 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,8 +20,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             scoreLabel.text = "Score: \(score)"
         }
     }
-    var alienCategory : UInt32 = 0x1 << 1
     var photonTorpedoCategory : UInt32 = 0x1 << 0
+    var alienCategory : UInt32 = 0x1 << 1
+    var playerShipCategory : UInt32 = 0x1 << 2
     var gameTimer : Timer!
     var shooting = false
     var lastShootingTime : TimeInterval = 0
@@ -29,6 +30,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var firstCorrectTouch = false
     
     override func didMove(to view: SKView) {
+        
+        // add SKPhysicsContactDelegate <- Very important, needed for didBegin and torpedoDidCollideWithAlien
+        // used for detect bullets hitting the enemy ships
+        self.physicsWorld.contactDelegate = self
         
         // add space background
        self.backgroundColor = SKColor.black
@@ -43,6 +48,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playerShip.name = "shuttle"
         playerShip.position = CGPoint(x: self.frame.size.width / 2, y: playerShip.size.height / 2 + 20)
         self.addChild(playerShip)
+        playerShip.physicsBody = SKPhysicsBody(rectangleOf: playerShip.size)
+        playerShip.physicsBody?.isDynamic = false
+        playerShip.physicsBody?.categoryBitMask = playerShipCategory
+        playerShip.physicsBody?.contactTestBitMask = alienCategory
         
         
         // add score label
@@ -56,10 +65,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // add aliens every 0.3 seconds
         gameTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(addAliens), userInfo: nil, repeats: true)
-        
-        // add SKPhysicsContactDelegate <- Very important, needed for didBegin and torpedoDidCollideWithAlien
-        // used for detect bullets hitting the enemy ships
-        self.physicsWorld.contactDelegate = self
+    
     }
     
     
@@ -72,7 +78,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.physicsBody = SKPhysicsBody(rectangleOf: alien.size)
         alien.physicsBody?.isDynamic = true
         alien.physicsBody?.categoryBitMask = alienCategory
-        alien.physicsBody?.contactTestBitMask = photonTorpedoCategory
+        alien.physicsBody?.contactTestBitMask = photonTorpedoCategory | playerShipCategory
         alien.physicsBody?.collisionBitMask = 0
         self.addChild(alien)
         
@@ -139,22 +145,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // delegate method from SKPhysicsContactDelegate
     func didBegin(_ contact: SKPhysicsContact) {
-        print("hello???\n");
-        // find out which body is alien or torpedo
-        var firstBody : SKPhysicsBody
-        var secondBody : SKPhysicsBody
+        let collison : UInt32 = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
-        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
-        } else {
-            firstBody = contact.bodyB
-            secondBody = contact.bodyA
+        if collison == playerShipCategory | alienCategory {
+//            print("Yesss\n");
+            playerShipDidCollideWithAlien()
         }
-        
-        if (firstBody.categoryBitMask & photonTorpedoCategory) != 0 && secondBody.categoryBitMask & alienCategory != 0 {
+        if collison == photonTorpedoCategory | alienCategory {
+//            print("Noooon");
+            // find out which body is alien or torpedo
+            var firstBody : SKPhysicsBody
+            var secondBody : SKPhysicsBody
+
+            if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+                firstBody = contact.bodyA
+                secondBody = contact.bodyB
+            } else {
+                firstBody = contact.bodyB
+                secondBody = contact.bodyA
+            }
             torpedoDidCollideWithAlien(torpedoNode: firstBody.node as! SKSpriteNode, alienNode: secondBody.node as! SKSpriteNode)
         }
+    }
+    
+    func playerShipDidCollideWithAlien() {
+//        print("player touches alien\n");
+        let transition = SKTransition.flipVertical(withDuration: 0.5)
+        let gameOver = GameOver(fileNamed: "GameOver")
+        self.view?.presentScene(gameOver!, transition: transition)
     }
     
     func torpedoDidCollideWithAlien(torpedoNode: SKSpriteNode, alienNode: SKSpriteNode) {
