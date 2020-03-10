@@ -5,7 +5,7 @@
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
-1. [Schema](#Schema)
+1. [Video Walkthrough](#Video-Walkthrough)
 
 ## Overview
 
@@ -93,6 +93,9 @@ Rise of Resistance is an iOS game that is based on a classic battleship shooting
 - Game Over
 	- Game Version 1 or Version 2 (Restart)
 	- Main Menu
+    
+## Video Walkthrough
+<img src="./readmeResources/gif.gif" width=250>
 
 ## Wireframes
 <img src="./readmeResources/Wireframes.png" width=600>
@@ -112,17 +115,3 @@ Rise of Resistance is an iOS game that is based on a classic battleship shooting
 ### [BONUS] Interactive Prototype
 
 <img src="./readmeResources/interactivePrototype.gif" width=250>
-
-## Schema
-
-[This section will be completed in Unit 9]
-
-### Models
-
-[Add table of models]
-
-### Networking
-
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
