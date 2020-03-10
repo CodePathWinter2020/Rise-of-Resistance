@@ -67,7 +67,6 @@ class GameScene: SKScene {
         alien.physicsBody?.categoryBitMask = alienCategory
         alien.physicsBody?.contactTestBitMask = photoTorpedoCategory
         alien.physicsBody?.collisionBitMask = 0
-        
         self.addChild(alien)
         
         let animationDuration : TimeInterval = 6
@@ -77,6 +76,27 @@ class GameScene: SKScene {
         actionArray.append(SKAction.removeFromParent())
         alien.run(SKAction.sequence(actionArray))
         
+    }
+    
+    func fireTopedo() {
+        self.run(SKAction.playSoundFileNamed("torpedo.mp3", waitForCompletion: false))
+        let torpedoNode = SKSpriteNode(imageNamed: "torpedo")
+        torpedoNode.position = playerShip.position
+        torpedoNode.position.y += 5
+        let radius = torpedoNode.size.width / 2
+        torpedoNode.physicsBody = SKPhysicsBody(circleOfRadius: radius)
+        torpedoNode.physicsBody?.isDynamic = true
+        torpedoNode.physicsBody?.categoryBitMask = photoTorpedoCategory
+        torpedoNode.physicsBody?.contactTestBitMask = alienCategory
+        torpedoNode.physicsBody?.collisionBitMask = 0
+        torpedoNode.physicsBody?.usesPreciseCollisionDetection = true
+        self.addChild(torpedoNode)
+        
+        let animationDuration : TimeInterval = 0.1
+        var actionArray = [SKAction]()
+        actionArray.append(SKAction.move(to: CGPoint(x: playerShip.position.x, y: self.frame.size.height), duration: animationDuration))
+        actionArray.append(SKAction.removeFromParent())
+        torpedoNode.run(SKAction.sequence(actionArray))
     }
     
     

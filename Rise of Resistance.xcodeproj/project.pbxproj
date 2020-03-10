@@ -18,6 +18,7 @@
 		246A7C2D24171FCD00415E01 /* SpaceBackground.sks in Resources */ = {isa = PBXBuildFile; fileRef = 246A7C2B24171FCD00415E01 /* SpaceBackground.sks */; };
 		246A7C302417237000415E01 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 246A7C2F2417237000415E01 /* MenuScene.sks */; };
 		246A7C32241723B800415E01 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246A7C31241723B800415E01 /* MenuScene.swift */; };
+		246A7C36241735F800415E01 /* torpedo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 246A7C35241735F800415E01 /* torpedo.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		246A7C2B24171FCD00415E01 /* SpaceBackground.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceBackground.sks; sourceTree = "<group>"; };
 		246A7C2F2417237000415E01 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		246A7C31241723B800415E01 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		246A7C35241735F800415E01 /* torpedo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = torpedo.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				246A7C33241723BC00415E01 /* Menu */,
 				246A7C2B24171FCD00415E01 /* SpaceBackground.sks */,
 				243EFB0C241714BC00997849 /* Actions.sks */,
+				246A7C35241735F800415E01 /* torpedo.mp3 */,
 				243EFB10241714BC00997849 /* GameViewController.swift */,
 				243EFB12241714BC00997849 /* Main.storyboard */,
 				243EFB15241714BD00997849 /* Assets.xcassets */,
@@ -162,6 +165,7 @@
 				243EFB19241714BD00997849 /* LaunchScreen.storyboard in Resources */,
 				246A7C2D24171FCD00415E01 /* SpaceBackground.sks in Resources */,
 				243EFB0D241714BC00997849 /* Actions.sks in Resources */,
+				246A7C36241735F800415E01 /* torpedo.mp3 in Resources */,
 				246A7C302417237000415E01 /* MenuScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
