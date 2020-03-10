@@ -33,9 +33,17 @@ class MenuScene: SKScene {
             let nodesArray = self.nodes(at: location)
             
             if nodesArray.first?.name == "newGameBtn" {
-                let transition = SKTransition.flipVertical(withDuration: 0.5)
-                let gameScene = GameScene(size: self.size)
-                self.view?.presentScene(gameScene, transition: transition)
+                if mapLabel.text == "Map: Original" {
+                    let transition = SKTransition.flipVertical(withDuration: 0.5)
+                    let gameScene = GameScene(size: self.size)
+                    self.view?.presentScene(gameScene, transition: transition)
+                }
+                else {
+                    let transition = SKTransition.flipVertical(withDuration: 0.5)
+                    let gameSceneZot = GameSceneZot(size: self.size)
+                    self.view?.presentScene(gameSceneZot, transition: transition)
+                }
+
             }
             else if nodesArray.first?.name == "changeMapBtn" {
                 if mapLabel.text == "Map: Original" {

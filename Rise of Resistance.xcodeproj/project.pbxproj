@@ -23,6 +23,7 @@
 		246A7C302417237000415E01 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 246A7C2F2417237000415E01 /* MenuScene.sks */; };
 		246A7C32241723B800415E01 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246A7C31241723B800415E01 /* MenuScene.swift */; };
 		246A7C36241735F800415E01 /* torpedo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 246A7C35241735F800415E01 /* torpedo.mp3 */; };
+		24E4790224176A74005E83AB /* GameSceneZot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4790124176A74005E83AB /* GameSceneZot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		246A7C2F2417237000415E01 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		246A7C31241723B800415E01 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		246A7C35241735F800415E01 /* torpedo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = torpedo.mp3; sourceTree = "<group>"; };
+		24E4790124176A74005E83AB /* GameSceneZot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneZot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				243EFB0A241714BC00997849 /* GameScene.sks */,
 				243EFB0E241714BC00997849 /* GameScene.swift */,
+				24E4790124176A74005E83AB /* GameSceneZot.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				246A7C32241723B800415E01 /* MenuScene.swift in Sources */,
 				243EFB11241714BC00997849 /* GameViewController.swift in Sources */,
 				244684CF2417617F00D6B0FD /* GameOver.swift in Sources */,
+				24E4790224176A74005E83AB /* GameSceneZot.swift in Sources */,
 				243EFB09241714BC00997849 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
