@@ -164,7 +164,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 firstBody = contact.bodyB
                 secondBody = contact.bodyA
             }
-            torpedoDidCollideWithAlien(torpedoNode: firstBody.node as! SKSpriteNode, alienNode: secondBody.node as! SKSpriteNode)
+            if firstBody.node != nil && secondBody.node != nil {
+                torpedoDidCollideWithAlien(torpedoNode: firstBody.node as! SKSpriteNode, alienNode: secondBody.node as! SKSpriteNode)
+            }
         }
     }
     

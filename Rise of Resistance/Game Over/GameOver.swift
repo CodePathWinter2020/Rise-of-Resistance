@@ -12,6 +12,7 @@ class GameOver: SKScene {
     
     var gameOverScore : Int = 0
     var scoreLabel : SKLabelNode!
+    var gameSceneZot : Bool = false
     
     override func didMove(to view: SKView) {
         
@@ -35,9 +36,16 @@ class GameOver: SKScene {
             let nodesArray = self.nodes(at: location)
             
             if nodesArray.first?.name == "newGameBtn" {
-                let transition = SKTransition.flipVertical(withDuration: 0.5)
-                let gameScene = GameScene(size: self.size)
-                self.view?.presentScene(gameScene, transition: transition)
+                if gameSceneZot {
+                    let transition = SKTransition.flipVertical(withDuration: 0.5)
+                    let gameScene = GameSceneZot(size: self.size)
+                    self.view?.presentScene(gameScene, transition: transition)
+                }
+                else {
+                    let transition = SKTransition.flipVertical(withDuration: 0.5)
+                    let gameScene = GameScene(size: self.size)
+                    self.view?.presentScene(gameScene, transition: transition)
+                }
             }
             else if nodesArray.first?.name == "mainMenuBtn" {
                 let transition = SKTransition.flipVertical(withDuration: 0.5)

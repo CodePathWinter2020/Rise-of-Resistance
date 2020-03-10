@@ -65,7 +65,7 @@ class GameSceneZot: SKScene, SKPhysicsContactDelegate {
         self.addChild(scoreLabel)
         
         // add aliens every 0.3 seconds
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(addAliens), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.07, target: self, selector: #selector(addAliens), userInfo: nil, repeats: true)
     
     }
     
@@ -165,7 +165,9 @@ class GameSceneZot: SKScene, SKPhysicsContactDelegate {
                 firstBody = contact.bodyB
                 secondBody = contact.bodyA
             }
-            torpedoDidCollideWithAlien(torpedoNode: firstBody.node as! SKSpriteNode, alienNode: secondBody.node as! SKSpriteNode)
+            if firstBody.node != nil && secondBody.node != nil {
+                torpedoDidCollideWithAlien(torpedoNode: firstBody.node as! SKSpriteNode, alienNode: secondBody.node as! SKSpriteNode)
+            }
         }
     }
     
@@ -174,6 +176,7 @@ class GameSceneZot: SKScene, SKPhysicsContactDelegate {
         let transition = SKTransition.flipVertical(withDuration: 0.5)
         let gameOver = GameOver(fileNamed: "GameOver")
         gameOver?.gameOverScore = score
+        gameOver?.gameSceneZot = true
         self.view?.presentScene(gameOver!, transition: transition)
     }
     
