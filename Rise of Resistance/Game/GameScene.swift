@@ -172,6 +172,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        print("player touches alien\n");
         let transition = SKTransition.flipVertical(withDuration: 0.5)
         let gameOver = GameOver(fileNamed: "GameOver")
+        gameOver?.gameOverScore = score
         self.view?.presentScene(gameOver!, transition: transition)
     }
     

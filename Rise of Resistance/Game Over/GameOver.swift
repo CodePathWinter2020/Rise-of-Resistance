@@ -9,6 +9,10 @@
 import SpriteKit
 
 class GameOver: SKScene {
+    
+    var gameOverScore : Int = 0
+    var scoreLabel : SKLabelNode!
+    
     override func didMove(to view: SKView) {
         
         self.backgroundColor = SKColor.black
@@ -18,10 +22,14 @@ class GameOver: SKScene {
         spaceBackground?.zPosition = -20
         spaceBackground?.advanceSimulationTime(Double(spaceBackground!.particleLifetime))
         self.addChild(spaceBackground!)
+        
+        scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
+        scoreLabel.text = "\(gameOverScore)"
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
+        
         
         if let location = touch?.location(in: self) {
             let nodesArray = self.nodes(at: location)
